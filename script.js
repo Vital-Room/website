@@ -87,27 +87,67 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 3000);
     }
 
-    // Dr Sandhu section interactions
-    const ringDots = document.querySelectorAll('.ring-dot');
-    const infoBoxes = document.querySelectorAll('.info-box');
+});
+
+// Logo carousel controls
+let currentScrollPosition = 0;
+let isManualMode = false;
+let autoScrollInterval;
+
+function scrollLogos(direction) {
+    const track1 = document.querySelector('.logo-track-1');
+    const track2 = document.querySelector('.logo-track-2');
     
-    ringDots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-            // Hide all info boxes
-            infoBoxes.forEach(box => {
-                box.classList.remove('active');
-            });
-            
-            // Show the corresponding info box
-            const infoType = dot.getAttribute('data-info');
-            const targetBox = document.getElementById(`${infoType}-info`);
-            if (targetBox) {
-                targetBox.classList.add('active');
-            }
-        });
-    });
+    // Stop automatic scrolling
+    if (autoScrollInterval) {
+        clearInterval(autoScrollInterval);
+    }
     
-    // No info boxes shown by default - user must click a dot
+    // Pause CSS animations
+    track1.style.animationPlayState = 'paused';
+    track2.style.animationPlayState = 'paused';
+    isManualMode = true;
+    
+    const scrollAmount = 300;
+    
+    if (direction === 'left') {
+        currentScrollPosition += scrollAmount;
+    } else {
+        currentScrollPosition -= scrollAmount;
+    }
+    
+    // Apply smooth scrolling to both tracks
+    track1.style.transition = 'transform 0.5s ease';
+    track2.style.transition = 'transform 0.5s ease';
+    track1.style.transform = `translateX(${currentScrollPosition}px)`;
+    track2.style.transform = `translateX(${-currentScrollPosition}px)`;
+    
+    // Restart automatic scrolling after 4 seconds
+    setTimeout(() => {
+        if (isManualMode) {
+            startAutoScroll();
+        }
+    }, 4000);
+}
+
+function startAutoScroll() {
+    const track1 = document.querySelector('.logo-track-1');
+    const track2 = document.querySelector('.logo-track-2');
+    
+    // Reset to automatic mode
+    isManualMode = false;
+    track1.style.animationPlayState = 'running';
+    track2.style.animationPlayState = 'running';
+    track1.style.transition = 'none';
+    track2.style.transition = 'none';
+    track1.style.transform = 'translateX(0px)';
+    track2.style.transform = 'translateX(-50%)';
+    currentScrollPosition = 0;
+}
+
+// Initialize automatic scrolling
+document.addEventListener('DOMContentLoaded', function() {
+    startAutoScroll();
 });
 
 // Add some subtle animations on page load
