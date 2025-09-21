@@ -676,12 +676,12 @@ body {
 }
 
 .dr-credentials-inline {
-    font-size: 0.4rem;
+    font-size: 0.7rem;
     color: #666;
     font-weight: 300;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    display: block;
+    text-align: center;
     margin-top: 0.5rem;
     line-height: 1.2;
 }
@@ -1507,7 +1507,7 @@ body {
     
     .dr-profile {
         flex-direction: column;
-        gap: 5rem;
+        gap: 3rem;
         text-align: center;
         align-items: center;
         justify-content: center;
@@ -1517,7 +1517,7 @@ body {
     .dr-story {
         max-width: 100%;
         padding: 1.5rem;
-        margin-top: 4rem;
+        margin-top: 2rem;
         order: 2;
         width: 100%;
     }
