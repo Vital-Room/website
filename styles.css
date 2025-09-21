@@ -477,12 +477,12 @@ body {
 }
 
 .logo-track-1 {
-    animation: logoScroll 40s linear infinite;
+    animation: logoScroll 15s linear infinite;
     margin-bottom: 2rem;
 }
 
 .logo-track-2 {
-    animation: logoScrollReverse 40s linear infinite;
+    animation: logoScrollReverse 15s linear infinite;
 }
 
 .logo-item {
@@ -625,6 +625,12 @@ body {
     margin-top: 4rem;
 }
 
+@media (min-width: 1200px) {
+    .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 .service-card {
     padding: 2.5rem;
     background: rgba(255, 255, 255, 0.02);
@@ -651,41 +657,6 @@ body {
     line-height: 1.6;
 }
 
-/* Features Grid */
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-top: 4rem;
-}
-
-.feature-item {
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 12px;
-    transition: all 0.3s ease;
-    text-align: center;
-}
-
-.feature-item:hover {
-    transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(0, 212, 170, 0.3);
-}
-
-.feature-item h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #f5f5f5;
-}
-
-.feature-item p {
-    color: #a0a0a0;
-    line-height: 1.6;
-    font-size: 0.95rem;
-}
 
 /* Meet Dr Sandhu Section */
 .meet-dr {
@@ -702,6 +673,17 @@ body {
     font-family: 'Inter', sans-serif;
     margin-top: 2.5rem;
     text-align: center;
+}
+
+.dr-credentials-inline {
+    font-size: 0.4rem;
+    color: #666;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 0.5rem;
+    line-height: 1.2;
 }
 
 .dr-profile {
@@ -1167,6 +1149,19 @@ body {
     color: #00a8cc;
 }
 
+.footer-copyright {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-copyright p {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
 /* Contact Form Styles */
 .contact-form-section {
     margin-top: 4rem;
@@ -1509,25 +1504,22 @@ body {
         padding: 2rem;
     }
     
-    .features-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-        margin-top: 3rem;
-    }
-    
-    .feature-item {
-        padding: 1.5rem;
-    }
     
     .dr-profile {
         flex-direction: column;
-        gap: 3rem;
+        gap: 5rem;
         text-align: center;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
     }
     
     .dr-story {
         max-width: 100%;
         padding: 1.5rem;
+        margin-top: 4rem;
+        order: 2;
+        width: 100%;
     }
     
     .dr-story p {
@@ -1537,6 +1529,17 @@ body {
     .dr-image-container {
         width: 250px;
         height: 250px;
+        margin: 0 auto;
+        margin-top: 0;
+        margin-bottom: 2rem;
+        order: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        left: 0;
+        right: 0;
+        flex-shrink: 0;
     }
     
     .futuristic-ring {
