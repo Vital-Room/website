@@ -272,12 +272,13 @@
     <!-- Meet Dr Sandhu Section -->
     <section class="meet-dr">
         <div class="container">
-            <h2 class="section-title">Meet Dr Sandhu <span class="dr-credentials">MBBS iBSc MRCGP Dip IBLM</span></h2>
+            <h2 class="section-title">Meet your GP, Dr Sandhu</h2>
             <div class="dr-profile">
                 <div class="dr-image-container">
                     <div class="dr-image-circle">
                         <img src="assets/kurren.photo.jpg" alt="Dr Sandhu" class="dr-image">
                     </div>
+                    <div class="dr-credentials">MBBS iBSc MRCGP Dip IBLM</div>
                     <div class="futuristic-ring">
                         <div class="ring-dot">
                             <div class="dot-glow"></div>
@@ -313,37 +314,53 @@
                 <div class="cta-packages">
                     <div class="package-card">
                         <div class="package-header">
-                            <h3 class="package-title">Lifestyle Medicine Consultation</h3>
-                            <div class="package-mountain">Mt Kilimanjaro</div>
+                            <h3 class="package-title">Burnout Recovery Session</h3>
                         </div>
                         <div class="package-includes">
                             <h4>includes</h4>
                             <ul>
-                                <li>30 minute Lifestyle Medicine Consultation with a GP</li>
-                                <li>Thorough lifestyle and medical assessment</li>
-                                <li>6 Point Improvement Plan</li>
+                                <li>60 minute 1:1 Consultation</li>
+                                <li>Find the Root Cause</li>
+                                <li>Practical Strategies to Reset</li>
+                                <li>Burnout Prevention Blueprint</li>
+                                <li>Exploring your Physical Health</li>
                             </ul>
                         </div>
                         <div class="package-price">£150</div>
-                        <a href="mailto:hello@thevitalroom.com?subject=Mt Kilimanjaro Package" class="package-button">Book Now</a>
+                        <button class="package-button" onclick="openCalendlyModal('burnout')">Book Now</button>
                     </div>
                     <div class="package-card featured">
                         <div class="package-header">
-                            <h3 class="package-title">Healthspan Booster</h3>
-                            <div class="package-mountain">Mt Everest</div>
+                            <h3 class="package-title">Lifestyle Medicine x High Performance Protocol</h3>
                         </div>
                         <div class="package-includes">
                             <h4>includes</h4>
                             <ul>
-                                <li>30 minute assessment consultation</li>
-                                <li>35 biomarker blood tests and biometric testing</li>
-                                <li>30 minute treatment discussion</li>
-                                <li>Follow up testing and 30 minute consultation 16 weeks later</li>
-                                <li>The same GP for each consultation</li>
+                                <li>6 Weekly 1:1 Sessions</li>
+                                <li>Biometric and Blood Testing</li>
+                                <li>Strategies to Improve Health and Work Performance</li>
+                                <li>Personalised Recommendations</li>
+                                <li>Coaching to Make Changes Stick</li>
                             </ul>
                         </div>
                         <div class="package-price">£600</div>
-                        <a href="mailto:hello@thevitalroom.com?subject=Mt Everest Package" class="package-button">Book Now</a>
+                        <button class="package-button" onclick="openCalendlyModal('high-performance')">Book Now</button>
+                    </div>
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3 class="package-title">Workplace Wellbeing Experience</h3>
+                        </div>
+                        <div class="package-includes">
+                            <h4>includes</h4>
+                            <ul>
+                                <li>In-Person or Virtual Talks</li>
+                                <li>Extremely Interactive</li>
+                                <li>Prevent Burnout in the Workforce</li>
+                                <li>Lifestyle Medicine for Corporate Thriving</li>
+                            </ul>
+                        </div>
+                        <div class="package-price bespoke-pricing">Bespoke Pricing</div>
+                        <a href="workplace-wellbeing.html" class="package-button">Find Out More</a>
                     </div>
                 </div>
             </div>
@@ -365,12 +382,30 @@
                     </div>
                 </div>
                 <div class="footer-links">
-                    <a href="mailto:hello@thevitalroom.com" class="footer-link">hello@thevitalroom.com</a>
+                    <a href="https://calendly.com/hello-thevitalroom/vital-room-connection-call" class="footer-link" target="_blank">Book a Discovery Call</a>
+                    <span class="footer-divider">|</span>
+                    <a href="assets/pdfs/ThanksDoc_Website_Privacy_Policy.docx" class="footer-link" target="_blank">Privacy Policy</a>
+                    <span class="footer-divider">|</span>
+                    <a href="terms-and-conditions.html" class="footer-link">Terms & Conditions</a>
+                </div>
+                <div class="footer-credentials">
+                    <img src="assets/logos/1--CQC-Regulated-by-WHITE-135px.jpg" alt="CQC Regulated" class="cqc-logo">
+                    <span class="via-text">via <a href="https://thanksdoc.co.uk/" target="_blank" class="thanksdoc-link">ThanksDoc</a></span>
                 </div>
             </div>
         </div>
     </footer>
 
+    <!-- Calendly Modal -->
+    <div id="calendly-modal" class="calendly-modal">
+        <div class="calendly-modal-content">
+            <span class="calendly-close" onclick="closeCalendlyModal()">&times;</span>
+            <div class="calendly-inline-widget" data-url="https://calendly.com/hello-thevitalroom/burnoutrecoverysession" style="min-width:320px;height:700px;"></div>
+        </div>
+    </div>
+
+    <!-- Calendly Script -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
     <script src="script.js"></script>
 </body>
 </html>

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workplace Wellbeing Experience - The Vital Room</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <div class="logo-container">
+                        <div class="logo-line"></div>
+                        <div class="logo-text">
+                            <div class="logo-line-1">THE</div>
+                            <div class="logo-line-2">VITAL</div>
+                            <div class="logo-line-3">ROOM</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="nav-menu">
+                    <a href="index.html" class="nav-link">Home</a>
+                    <a href="index.html#about" class="nav-link">About</a>
+                    <a href="index.html#services" class="nav-link">Services</a>
+                    <a href="index.html#contact" class="nav-link">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-line-1">Workplace Wellbeing</span>
+                    <span class="title-line-2">Experience</span>
+                </h1>
+                <p class="hero-subtagline">
+                    <span class="subtagline-item">Transform Your Workforce</span>
+                    <span class="subtagline-item">Prevent Burnout</span>
+                    <span class="subtagline-item">Boost Performance</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="workplace-content">
+        <div class="container">
+            <div class="workplace-intro">
+                <h2 class="section-title">Corporate Wellbeing Solutions</h2>
+                <p class="workplace-description">
+                    This page is specifically for <strong>Workplace Wellbeing Experience</strong> enquiries only. 
+                    If you're looking to book a 1:1 session, please use the "Book Now" buttons below for our individual services.
+                </p>
+            </div>
+
+            <!-- Burnout Prevention Section -->
+            <div class="burnout-prevention">
+                <h3 class="burnout-title">Why Workplace Burnout Prevention Matters</h3>
+                <div class="burnout-content">
+                    <p class="burnout-text">
+                        As a GP with over 8 years of experience, I've witnessed firsthand the devastating impact of workplace burnout on individuals and organizations. Burnout isn't just stress—it's a chronic state of physical and emotional exhaustion that leads to decreased productivity, increased absenteeism, and a toxic work culture.
+                    </p>
+                    <p class="burnout-text">
+                        Through lifestyle medicine strategies, we can prevent burnout before it takes hold. By addressing the root causes—poor sleep, inadequate nutrition, lack of movement, and unsustainable work patterns—we create resilient, high-performing teams that thrive rather than survive.
+                    </p>
+                    <p class="burnout-text">
+                        My approach combines evidence-based lifestyle interventions with practical workplace applications. Having treated thousands of patients and spoken at TEDx about these experiences, I understand both the medical science and the real-world challenges of modern work environments.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Contact Form -->
+            <div class="contact-form-section">
+                <h3 class="contact-form-title">Get in Touch About Workplace Wellbeing</h3>
+                <p class="contact-form-subtitle">Ready to transform your workplace? Send us a message and we'll get back to you within 24 hours.</p>
+                
+                <form id="workplaceForm" class="contact-form" action="https://formspree.io/f/xnnbkkyd" method="POST">
+                    <input type="hidden" name="enquiry_type" value="Workplace Wellbeing Experience">
+                    
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="company">Company Name *</label>
+                        <input type="text" id="company" name="company" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Tell us about your workplace wellbeing needs *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="What challenges is your workforce facing? How many employees? What type of session are you interested in?"></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="consent" name="consent" required>
+                            <span class="checkmark"></span>
+                            I consent to The Vital Room processing my personal data in accordance with the <a href="terms-and-conditions.html" target="_blank">Terms and Conditions</a> and <a href="assets/pdfs/ThanksDoc_Website_Privacy_Policy.docx" target="_blank">Privacy Policy</a>.
+                        </label>
+                    </div>
+                    
+                    <button type="submit" class="form-submit-btn">Send Enquiry</button>
+                </form>
+            </div>
+
+            <!-- Individual Services -->
+            <div class="individual-services">
+                <h3 class="services-title">Looking for Individual Services?</h3>
+                <p class="services-subtitle">Book a 1:1 session with our lifestyle medicine experts</p>
+                
+                <div class="cta-packages">
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3 class="package-title">Burnout Recovery Session</h3>
+                        </div>
+                        <div class="package-includes">
+                            <h4>includes</h4>
+                            <ul>
+                                <li>60 minute 1:1 Consultation</li>
+                                <li>Find the Root Cause</li>
+                                <li>Practical Strategies to Reset</li>
+                                <li>Burnout Prevention Blueprint</li>
+                                <li>Exploring your Physical Health</li>
+                            </ul>
+                        </div>
+                        <div class="package-price">£150</div>
+                        <button class="package-button" onclick="openCalendlyModal('burnout')">Book Now</button>
+                    </div>
+                    
+                    <div class="package-card featured">
+                        <div class="package-header">
+                            <h3 class="package-title">Lifestyle Medicine x High Performance Protocol</h3>
+                        </div>
+                        <div class="package-includes">
+                            <h4>includes</h4>
+                            <ul>
+                                <li>6 Weekly 1:1 Sessions</li>
+                                <li>Biometric and Blood Testing</li>
+                                <li>Strategies to Improve Health and Work Performance</li>
+                                <li>Personalised Recommendations</li>
+                                <li>Coaching to Make Changes Stick</li>
+                            </ul>
+                        </div>
+                        <div class="package-price">£600</div>
+                        <button class="package-button" onclick="openCalendlyModal('high-performance')">Book Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo-container">
+                        <div class="logo-line"></div>
+                        <div class="logo-text">
+                            <div class="logo-line-1">THE</div>
+                            <div class="logo-line-2">VITAL</div>
+                            <div class="logo-line-3">ROOM</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="https://calendly.com/hello-thevitalroom/vital-room-connection-call" class="footer-link" target="_blank">Book a Discovery Call</a>
+                    <span class="footer-divider">|</span>
+                    <a href="assets/pdfs/ThanksDoc_Website_Privacy_Policy.docx" class="footer-link" target="_blank">Privacy Policy</a>
+                    <span class="footer-divider">|</span>
+                    <a href="terms-and-conditions.html" class="footer-link">Terms & Conditions</a>
+                </div>
+                <div class="footer-credentials">
+                    <img src="assets/logos/1--CQC-Regulated-by-WHITE-135px.jpg" alt="CQC Regulated" class="cqc-logo">
+                    <span class="via-text">via <a href="https://thanksdoc.co.uk/" target="_blank" class="thanksdoc-link">ThanksDoc</a></span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Calendly Modal -->
+    <div id="calendly-modal" class="calendly-modal">
+        <div class="calendly-modal-content">
+            <span class="calendly-close" onclick="closeCalendlyModal()">&times;</span>
+            <div class="calendly-inline-widget" data-url="https://calendly.com/hello-thevitalroom/burnoutrecoverysession" style="min-width:320px;height:700px;"></div>
+        </div>
+    </div>
+
+    <!-- Calendly Script -->
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -148,7 +148,72 @@ function startAutoScroll() {
 // Initialize automatic scrolling
 document.addEventListener('DOMContentLoaded', function() {
     startAutoScroll();
+    
+    // Contact form handling
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            // Show loading state
+            const submitBtn = contactForm.querySelector('.form-submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            // Formspree will handle the submission and redirect
+            // We'll show success message after a short delay
+            setTimeout(() => {
+                submitBtn.textContent = 'Message Sent!';
+                submitBtn.style.background = '#00d4aa';
+                contactForm.reset();
+                
+                // Reset button after 3 seconds
+                setTimeout(() => {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.style.background = '';
+                }, 3000);
+            }, 1000);
+        });
+    }
 });
+
+// Calendly Modal Functions
+function openCalendlyModal(type) {
+    const modal = document.getElementById('calendly-modal');
+    const widget = document.querySelector('.calendly-inline-widget');
+    
+    // Update the URL based on the type
+    if (type === 'burnout') {
+        widget.setAttribute('data-url', 'https://calendly.com/hello-thevitalroom/burnoutrecoverysession');
+    } else if (type === 'high-performance') {
+        widget.setAttribute('data-url', 'https://calendly.com/hello-thevitalroom/lifestyle-medicine-x-high-performance-protocol');
+    }
+    
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    
+    // Initialize Calendly widget
+    if (typeof Calendly !== 'undefined') {
+        Calendly.initInlineWidget({
+            url: widget.getAttribute('data-url'),
+            parentElement: widget
+        });
+    }
+}
+
+function closeCalendlyModal() {
+    const modal = document.getElementById('calendly-modal');
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto'; // Re-enable scrolling
+}
+
+// Close modal when clicking outside of it
+window.onclick = function(event) {
+    const modal = document.getElementById('calendly-modal');
+    if (event.target === modal) {
+        closeCalendlyModal();
+    }
+}
 
 // Add some subtle animations on page load
 document.addEventListener('DOMContentLoaded', function() {
