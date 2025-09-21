@@ -89,65 +89,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-// Logo carousel controls
-let currentScrollPosition = 0;
-let isManualMode = false;
-let autoScrollInterval;
-
-function scrollLogos(direction) {
-    const track1 = document.querySelector('.logo-track-1');
-    const track2 = document.querySelector('.logo-track-2');
-    
-    // Stop automatic scrolling
-    if (autoScrollInterval) {
-        clearInterval(autoScrollInterval);
-    }
-    
-    // Pause CSS animations
-    track1.style.animationPlayState = 'paused';
-    track2.style.animationPlayState = 'paused';
-    isManualMode = true;
-    
-    const scrollAmount = 300;
-    
-    if (direction === 'left') {
-        currentScrollPosition += scrollAmount;
-    } else {
-        currentScrollPosition -= scrollAmount;
-    }
-    
-    // Apply smooth scrolling to both tracks
-    track1.style.transition = 'transform 0.5s ease';
-    track2.style.transition = 'transform 0.5s ease';
-    track1.style.transform = `translateX(${currentScrollPosition}px)`;
-    track2.style.transform = `translateX(${-currentScrollPosition}px)`;
-    
-    // Restart automatic scrolling after 4 seconds
-    setTimeout(() => {
-        if (isManualMode) {
-            startAutoScroll();
-        }
-    }, 4000);
-}
-
-function startAutoScroll() {
-    const track1 = document.querySelector('.logo-track-1');
-    const track2 = document.querySelector('.logo-track-2');
-    
-    // Reset to automatic mode
-    isManualMode = false;
-    track1.style.animationPlayState = 'running';
-    track2.style.animationPlayState = 'running';
-    track1.style.transition = 'none';
-    track2.style.transition = 'none';
-    track1.style.transform = 'translateX(0px)';
-    track2.style.transform = 'translateX(-50%)';
-    currentScrollPosition = 0;
-}
-
 // Initialize automatic scrolling
 document.addEventListener('DOMContentLoaded', function() {
-    startAutoScroll();
     
     // Contact form handling
     const contactForm = document.getElementById('contactForm');

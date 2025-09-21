@@ -437,38 +437,6 @@ body {
     -webkit-mask: linear-gradient(90deg, transparent 0%, black 20%, black 80%, transparent 100%);
 }
 
-.carousel-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    cursor: pointer;
-    z-index: 10;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-}
-
-.carousel-arrow:hover {
-    background: rgba(255, 255, 255, 0.2);
-    border-color: rgba(255, 255, 255, 0.4);
-    transform: translateY(-50%) scale(1.1);
-}
-
-.carousel-arrow-left {
-    left: 20px;
-}
-
-.carousel-arrow-right {
-    right: 20px;
-}
 
 .logo-track {
     display: flex;
@@ -477,12 +445,12 @@ body {
 }
 
 .logo-track-1 {
-    animation: logoScroll 15s linear infinite;
+    animation: logoScroll 6s linear infinite;
     margin-bottom: 2rem;
 }
 
 .logo-track-2 {
-    animation: logoScrollReverse 15s linear infinite;
+    animation: logoScrollReverse 6s linear infinite;
 }
 
 .logo-item {
@@ -963,19 +931,6 @@ body {
     background: rgba(0, 212, 170, 0.05);
 }
 
-.package-card.featured::before {
-    content: 'Most Popular';
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    background: linear-gradient(135deg, #00d4aa, #00a8cc);
-    color: #0a0a0a;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-}
 
 .package-header {
     margin-bottom: 2rem;
