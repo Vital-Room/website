@@ -126,9 +126,7 @@ function openCalendlyModal(type) {
     const widget = document.querySelector('.calendly-inline-widget');
     
     // Update the URL based on the type
-    if (type === 'burnout') {
-        widget.setAttribute('data-url', 'https://calendly.com/hello-thevitalroom/burnoutrecoverysession');
-    } else if (type === 'high-performance') {
+    if (type === 'high-performance') {
         widget.setAttribute('data-url', 'https://calendly.com/hello-thevitalroom/lifestyle-medicine-x-high-performance-protocol');
     }
     
