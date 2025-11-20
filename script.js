@@ -127,7 +127,7 @@ function openCalendlyModal(type) {
     
     // Update the URL based on the type
     if (type === 'high-performance') {
-        widget.setAttribute('data-url', 'https://calendly.com/hello-thevitalroom/lifestyle-medicine-x-high-performance-protocol');
+        widget.setAttribute('data-url', 'https://calendly.com/hello-thevitalroom/the-vital-run-project');
     }
     
     modal.style.display = 'block';
