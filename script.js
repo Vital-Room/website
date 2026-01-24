@@ -156,6 +156,77 @@ window.onclick = function(event) {
     }
 }
 
+// Testimonials Carousel - runs after full page load
+window.addEventListener('load', function() {
+    const carousel = document.querySelector('.testimonials-carousel');
+    const prevBtn = document.querySelector('.carousel-prev');
+    const nextBtn = document.querySelector('.carousel-next');
+    
+    if (carousel && prevBtn && nextBtn) {
+        let scrollInterval = null;
+        const scrollSpeed = 5;
+        
+        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+        
+        // Scroll left on hover (with loop)
+        prevBtn.onmouseenter = function() {
+            scrollInterval = setInterval(function() {
+                if (carousel.scrollLeft <= 0) {
+                    // Jump to end
+                    carousel.scrollLeft = carousel.scrollWidth - carousel.clientWidth;
+                } else {
+                    carousel.scrollLeft = carousel.scrollLeft - scrollSpeed;
+                }
+            }, 16);
+        };
+        
+        prevBtn.onmouseleave = function() {
+            if (scrollInterval) {
+                clearInterval(scrollInterval);
+                scrollInterval = null;
+            }
+        };
+        
+        // Scroll right on hover (with loop)
+        nextBtn.onmouseenter = function() {
+            scrollInterval = setInterval(function() {
+                if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 5) {
+                    // Jump to start
+                    carousel.scrollLeft = 0;
+                } else {
+                    carousel.scrollLeft = carousel.scrollLeft + scrollSpeed;
+                }
+            }, 16);
+        };
+        
+        nextBtn.onmouseleave = function() {
+            if (scrollInterval) {
+                clearInterval(scrollInterval);
+                scrollInterval = null;
+            }
+        };
+        
+        // Click for quick jumps (with loop)
+        prevBtn.onclick = function(e) {
+            e.preventDefault();
+            if (carousel.scrollLeft <= 0) {
+                carousel.scrollLeft = carousel.scrollWidth - carousel.clientWidth;
+            } else {
+                carousel.scrollLeft = carousel.scrollLeft - 350;
+            }
+        };
+        
+        nextBtn.onclick = function(e) {
+            e.preventDefault();
+            if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 5) {
+                carousel.scrollLeft = 0;
+            } else {
+                carousel.scrollLeft = carousel.scrollLeft + 350;
+            }
+        };
+    }
+});
+
 // Add some subtle animations on page load
 document.addEventListener('DOMContentLoaded', function() {
     // Animate logo on load

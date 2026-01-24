@@ -7,46 +7,34 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-container">
-            <div class="logo">
-                <div class="logo-container">
-                    <div class="logo-line"></div>
-                    <div class="logo-text">
-                        <div class="logo-line-1">THE</div>
-                        <div class="logo-line-2">VITAL</div>
-                        <div class="logo-line-3">ROOM</div>
-                    </div>
-                </div>
-            </div>
-            <div class="nav-menu">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#contact" class="nav-link">Services</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <a href="#contact" class="nav-cta">Get Started</a>
-            </div>
-        </div>
-    </nav>
-
     <!-- Hero Section -->
     <section class="hero">
-        <div class="hero-background">
-            <div class="hero-gradient"></div>
+        <!-- Top bar with logo and CTA -->
+        <div class="hero-top-bar">
+            <img src="assets/logo.png" alt="The Vital Room" class="hero-logo">
+            <a href="#contact" class="hero-cta-btn">Get Started</a>
         </div>
+        <div class="hero-shape-coral"></div>
+        <div class="hero-shape-mint-2"></div>
+        
+        <!-- Hero Image -->
+        <div class="hero-image-container">
+            <img src="assets/hero-doctor.png" alt="Dr Kurren Sandhu" class="hero-doctor-img">
+        </div>
+        
         <div class="hero-content">
             <h1 class="hero-title">
-                <span class="title-line-1">Where Burnout Ends,</span>
-                <span class="title-line-2">High Performance Begins</span>
-                <span class="title-line-3">and Vitality Lasts</span>
+                <span class="title-line-1">Burnout Prevention</span>
+                <span class="title-line-2">& Health Optimisation</span>
             </h1>
+            <p class="hero-subtitle">For high-stress work environments</p>
             <p class="hero-subtagline">
                 <span class="subtagline-item">Doctor-Led</span>
-                <span class="subtagline-item">Data-Driven</span>
-                <span class="subtagline-item">You-Focused</span>
+                <span class="subtagline-item">Workshops</span>
+                <span class="subtagline-item">Health Checks</span>
             </p>
             <a href="#contact" class="hero-cta">Get Started</a>
         </div>
@@ -216,79 +204,50 @@
     <section id="about" class="about">
         <div class="container">
             <div class="about-content">
-                <h2 class="section-title">It's not one or the other</h2>
+                <h2 class="section-title">The Cost of Burnout and Poor Health</h2>
                 <div class="about-text">
-                    <p>Imagine if you could get more done with less stress and improve your health at the same time. At The Vital Room, you don't have to choose.</p>
-                    <p>We combine cutting-edge lifestyle medicine with personalised coaching to help high performers optimise their health, prevent burnout and sustain peak performance. Through biomarker testing, evidence-based interventions and 1:1 guidance, we help you build the resilience and vitality needed to excel in every area of life.</p>
+                    <ul class="stats-list">
+                        <li>UK employees were off sick on average <strong>9.4 days per employee</strong> in 2024 <a href="https://www.cipd.org/uk/about/press-releases/workplace-absence-soars-nearly-two-working-weeks-each-year/" target="_blank" rel="noopener">(CIPD)</a></li>
+                        <li>Poor workplace health costs UK employers <strong>£85 billion annually</strong> <a href="https://www.gov.uk/government/publications/keep-britain-working-review-final-report/keep-britain-working-technical-note" target="_blank" rel="noopener">(Gov.uk)</a></li>
+                        <li><strong>21% of people</strong> needed time off work due to stress according to the Mental Health UK Burnout Report 2025 <a href="https://mentalhealth-uk.org/blog/burnout-report-2025-reveals-generational-divide-in-levels-of-stress-and-work-absence/" target="_blank" rel="noopener">(Mental Health UK)</a></li>
+                        <li>Reduced productivity, staff retention and engagement scores <a href="https://uk.greatplacetowork.co.uk/workplace-wellbeing-report" target="_blank" rel="noopener">(Great Place to Work)</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Section Transition with TEDx Image -->
+    <div class="section-transition">
+        <div class="transition-top"></div>
+        <div class="transition-bottom"></div>
+        <div class="transition-image-wrapper">
+            <img src="assets/tedx-speaking.png" alt="Dr Sandhu speaking at TEDx" class="transition-image">
+        </div>
+    </div>
 
     <!-- Services Section -->
     <section id="services" class="services">
         <div class="container">
-            <h2 class="section-title">Built Around You</h2>
+            <h2 class="section-title">How Dr Sandhu Can Help</h2>
+            <p class="services-intro">We deliver in-person and virtual wellbeing experiences for the office. These currently include a 1 hour workshop or in-office advanced health checks.</p>
             <div class="services-grid">
                 <div class="service-card">
-                    <h3>Performance Tracking</h3>
-                    <p>Real data, clear progress. We choose metrics that are right for you and ones that work.</p>
+                    <h3>Genuinely Entertaining</h3>
+                    <p>Dr Sandhu is a competition-winning spoken word artist. He has performed at TEDx and even No.10 Downing Street. Delivery is everything.</p>
+                    <p>Littered with on the ground stories training as a doctor, he will keep this engaging and super interactive.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Biomarker Testing</h3>
-                    <p>Bloodwork that matters, not just numbers.</p>
+                    <h3>8 Years as a Medical Doctor</h3>
+                    <p>As a fully qualified GP working in the NHS and Private Sector, Dr Sandhu has years of experience working with professionals with work-related stress, burnout and many other mental and physical health conditions. He has further training in Lifestyle Medicine.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Lifestyle Medicine</h3>
-                    <p>Nutrition, sleep, recovery, and movement plans tailored to you.</p>
+                    <h3>Lived Experience</h3>
+                    <p>From pursuing academic and sporting excellence at one of the world's top Universities to long junior doctor night shifts and literally saving lives on the roadside, Dr Sandhu knows pressure. He also knows what it's like to experience burnout, recover from it and thrive in high-stress environments.</p>
                 </div>
                 <div class="service-card">
-                    <h3>Evidence-Based</h3>
-                    <p>Evidence-based practice only. All assessments and interventions are backed by science.</p>
-                </div>
-                <div class="service-card">
-                    <h3>GP-Led</h3>
-                    <p>We can navigate any existing health conditions safely as appropriate.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Personalised</h3>
-                    <p>All interventions are built to fit around your current lifestyle for maximum chances of success.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Meet Dr Sandhu Section -->
-    <section class="meet-dr">
-        <div class="container">
-            <h2 class="section-title">Meet your Lifestyle GP, Dr Sandhu</h2>
-            <div class="dr-profile">
-                <div class="dr-image-container">
-                    <div class="dr-image-circle">
-                        <img src="assets/FlatPhotosKurren.jpg" alt="Dr Sandhu" class="dr-image">
-                    </div>
-                    <div class="futuristic-ring">
-                        <div class="ring-dot">
-                            <div class="dot-glow"></div>
-                        </div>
-                        <div class="ring-dot">
-                            <div class="dot-glow"></div>
-                        </div>
-                        <div class="ring-dot">
-                            <div class="dot-glow"></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="dr-story">
-                    <p><strong>Burnout was my wake-up call.</strong> In a single year at medical school, I completed two dissertations, authored a scientific paper at Queen's Square Neurology, and led my basketball team to the National Quarter Finals. On the surface, things looked great. By the end though, I was completely spent — I didn't leave my bed for a week and lacked energy to do the things I wanted to do.</p>
-                    
-                    <p><strong>That experience sparked a decade-long obsession.</strong> I wanted to know: how can we achieve extra-ordinary professional success without sacrificing our health? Through years of research, experimentation, and postgraduate training in Lifestyle Medicine, I discovered how to create balance without losing ambition.</p>
-                    
-                    <p><strong>The results transformed my life.</strong> I graduated from one of the UK's top universities with an academic prize, completed GP training with above-average results, and spoke at TEDx about my journey. I've cycled from London to Paris, completed Hyrox fitness races, and taken on the infamous FanDance — a brutal UK Special Forces challenge. Most importantly, my relationships have deepened and I've learned how to enjoy the process.</p>
-                    
-                    <p><strong>Now, I share this with others.</strong> Having consulted with tens of thousands of patients, I founded The Vital Room to help clients transform their health and performance.</p>
-                    
-                    <p><strong>High performance AND vitality is possible.</strong></p>
+                    <h3>Personalised to Your Workplace</h3>
+                    <p>Part of what makes these experiences unique, is that each one is tailored to your organisation's priorities and needs. We strive for feedback and continue to grow and improve from it.</p>
                 </div>
             </div>
         </div>
@@ -298,41 +257,133 @@
     <section id="contact" class="cta">
         <div class="container">
             <div class="cta-content">
-                <h2 class="cta-title">Your Future Self is Waiting.</h2>
-                <div class="cta-packages">
+                <h2 class="cta-title">Give Me The Specifics</h2>
+                <div class="cta-packages three-columns">
                     <div class="package-card">
                         <div class="package-header">
-                            <h3 class="package-title">Lifestyle Medicine x High Performance Protocol</h3>
+                            <h3 class="package-title">Burnout to Balance: A 1 Hour Masterclass</h3>
+                            <p class="package-format">In-Person or Virtual</p>
                         </div>
                         <div class="package-includes">
                             <h4>includes</h4>
                             <ul>
-                                <li>In-depth Assessment Consultation</li>
-                                <li>Personalised Biometric and Blood Testing</li>
-                                <li>Action Plan Consultation to Improve Health and Performance</li>
-                                <li>Evidence-Based Behaviour Change Methodology to Make Changes Stick</li>
+                                <li>5 'R' Framework for Recovering From and Preventing Burnout</li>
+                                <li>Preventative Health Strategies</li>
+                                <li>Professional Productivity Blueprint</li>
+                                <li>Interactive Workshop that engages your team</li>
+                                <li>Practical takeaways they can use immediately</li>
                             </ul>
                         </div>
-                        <div class="package-price bespoke-pricing">Bespoke Pricing</div>
+                        <div class="package-price">£600</div>
                         <a href="https://calendly.com/hello-thevitalroom/the-vital-run-project" class="package-button" target="_blank">Book Now</a>
                     </div>
                     <div class="package-card">
                         <div class="package-header">
-                            <h3 class="package-title">Workplace Wellbeing Experience</h3>
+                            <h3 class="package-title">1:1 Employee Advanced Health Checks and Coaching</h3>
+                            <p class="package-format">A 3 Hour Session in Your Office</p>
                         </div>
                         <div class="package-includes">
                             <h4>includes</h4>
                             <ul>
-                                <li>In-Person or Virtual Talks</li>
-                                <li>Extremely Interactive</li>
-                                <li>Prevent Burnout in the Workforce</li>
-                                <li>Lifestyle Medicine for Corporate Thriving</li>
+                                <li>Advanced biometrics: Height, Weight, Blood Pressure, Grip Strength, Convenient Cardiorespiratory fitness tests</li>
+                                <li>Longevity blood testing</li>
+                                <li>Follow up Consultation with Lifestyle Medicine GP, Dr Sandhu, to optimise short-term focus and energy and long-term health</li>
                             </ul>
                         </div>
-                        <div class="package-price bespoke-pricing">Bespoke Pricing</div>
-                        <a href="workplace-wellbeing.html" class="package-button">Find Out More</a>
+                        <div class="package-price">£1800</div>
+                        <a href="https://calendly.com/hello-thevitalroom/the-vital-run-project" class="package-button" target="_blank">Book Now</a>
+                    </div>
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3 class="package-title">Senior Leader Health and Focus Optimisation</h3>
+                            <p class="package-format">Group Coaching</p>
+                        </div>
+                        <div class="package-includes">
+                            <h4>includes</h4>
+                            <ul>
+                                <li>Advanced biometrics and personalised longevity blood testing</li>
+                                <li>12 Week Programme to Optimise Energy, Focus and Long-term Health</li>
+                                <li>Groups are intentionally kept small</li>
+                                <li>Application Only</li>
+                            </ul>
+                        </div>
+                        <div class="package-price bespoke-pricing">Contact for more info</div>
+                        <a href="https://calendly.com/hello-thevitalroom/the-vital-run-project" class="package-button" target="_blank">Get in Touch</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="testimonial-blob testimonial-blob-1"></div>
+        <div class="testimonial-blob testimonial-blob-2"></div>
+        <div class="testimonial-blob testimonial-blob-3"></div>
+        <div class="container">
+            <h2 class="section-title">What Others Are Saying</h2>
+            <div class="carousel-wrapper">
+                <button class="carousel-arrow carousel-prev" aria-label="Previous testimonials">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <div class="testimonials-carousel">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Kurren's mastery of the spoken word has been shown throughout his time as a trainee doctor - imparting wisdom to his peers in his own unique way. He most successfully demonstrated this in his spoken word poetry in a Dragon's Den event mesmerizing the audience with his cadence and flow enhancing his narration. The reflection by the audience after he finished can only be thought as overwhelmingly positive. Don't miss out on hearing Kurren yourself!"</p>
+                    <div class="testimonial-author">
+                        <p class="author-name">Atif Hassan</p>
+                        <p class="author-title">BSol West Birmingham VTS Training Programme Director</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Kurren was a fantastic guest speaker for an actuarial session I hosted. Despite the virtual setting, he brought energy, enthusiasm, and valuable insights. His adaptability and passion were evident, especially given the short notice and limited time slot for his presentation. It was great to present with him and look forward to collaborating again soon."</p>
+                    <div class="testimonial-author">
+                        <p class="author-name">Shivam Patel</p>
+                        <p class="author-title">Aptuary</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Kurren's spoken word during our course filled us all with joy and reverence."</p>
+                    <div class="testimonial-author">
+                        <p class="author-name">Joe Hudson</p>
+                        <p class="author-title">Art of Accomplishment</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I'd highly recommend working with Kurren and his spoken word. Kurren was lead performer for TEDxAstonUniversity. He was a delight to work with; professional, enthusiastic and diligent. He's engaged and quick to respond; excellent at tailoring his craft for his target audience whilst keeping his unique style; creative and open to brainstorming ideas together. I look forward to working with him again!"</p>
+                    <div class="testimonial-author">
+                        <p class="author-name">Noor</p>
+                        <p class="author-title">TEDxAston</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Inspiring and motivational in helping people to reach a healthier work life balance and to recognise their spiritual journey by listening to that inner voice."</p>
+                    <div class="testimonial-author">
+                        <p class="author-name">Linda</p>
+                        <p class="author-title">The Curve</p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Your work is amazing! We are really pleased with it. Well done!"</p>
+                    <div class="testimonial-author">
+                        <p class="author-name">Beatfreeks</p>
+                        <p class="author-title"></p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Many congratulations on such an inspirational and beautifully nuanced inaugural talk."</p>
+                    <div class="testimonial-author">
+                        <p class="author-name">Nikolai</p>
+                        <p class="author-title">The Curve</p>
+                    </div>
+                </div>
+                </div>
+                <button class="carousel-arrow carousel-next" aria-label="Next testimonials">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </section>
