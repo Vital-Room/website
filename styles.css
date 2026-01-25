@@ -609,8 +609,10 @@ body {
 
 @media (max-width: 768px) {
     .carousel-wrapper {
-        flex-direction: column;
-        gap: 1.5rem;
+        flex-direction: row;
+        gap: 0;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
     }
     
     .carousel-arrow {
@@ -618,8 +620,14 @@ body {
     }
     
     .testimonials-carousel {
+        display: flex;
+        gap: 1rem;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x mandatory;
         scrollbar-width: thin;
         scrollbar-color: var(--coral) var(--bg-white);
+        padding: 1rem 0.5rem 2rem;
     }
     
     .testimonials-carousel::-webkit-scrollbar {
@@ -638,12 +646,22 @@ body {
     }
     
     .testimonial-card {
-        flex: 0 0 300px;
+        flex: 0 0 280px;
+        min-width: 280px;
         padding: 1.5rem;
+        scroll-snap-align: start;
     }
     
     .testimonial-text {
         font-size: 0.95rem;
+    }
+    
+    .logo-track-1 {
+        animation: logoScroll 15s linear infinite;
+    }
+    
+    .logo-track-2 {
+        animation: logoScrollReverse 15s linear infinite;
     }
 }
 
