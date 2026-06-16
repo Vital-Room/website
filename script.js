@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe all sections for fade-in animation
-    const sections = document.querySelectorAll('.about, .services, .cta');
+    const sections = document.querySelectorAll('.about-me, .services, .cta');
     sections.forEach(section => {
         section.classList.add('fade-in');
         observer.observe(section);
@@ -40,11 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSection = document.querySelector(targetId);
             
             if (targetSection) {
-                const offsetTop = targetSection.offsetTop - 80; // Account for fixed navbar
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
@@ -241,27 +237,21 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
     }
 
-    // Animate hero content with staggered timing
-    const heroLeft = document.querySelector('.hero-left');
-    const heroRight = document.querySelector('.hero-right');
-    
-    if (heroLeft) {
-        heroLeft.style.opacity = '0';
-        heroLeft.style.transform = 'translateX(-30px)';
+    // Animate hero photos with staggered timing
+    const heroPhotos = document.querySelectorAll('.hero-photo-card');
+    const photoTransforms = [
+        'rotate(-3deg) translateY(0)',
+        'rotate(2deg) translateY(0)',
+        'translateY(0)'
+    ];
+
+    heroPhotos.forEach((card, i) => {
+        card.style.opacity = '0';
+        card.style.transform = `${photoTransforms[i]} translateY(32px)`;
         setTimeout(() => {
-            heroLeft.style.transition = 'all 1s ease-out';
-            heroLeft.style.opacity = '1';
-            heroLeft.style.transform = 'translateX(0)';
-        }, 200);
-    }
-    
-    if (heroRight) {
-        heroRight.style.opacity = '0';
-        heroRight.style.transform = 'translateX(30px) scale(0.9)';
-        setTimeout(() => {
-            heroRight.style.transition = 'all 1.2s ease-out';
-            heroRight.style.opacity = '1';
-            heroRight.style.transform = 'translateX(0) scale(1)';
-        }, 400);
-    }
+            card.style.transition = 'opacity 0.9s ease-out, transform 0.45s ease, box-shadow 0.45s ease';
+            card.style.opacity = '1';
+            card.style.transform = photoTransforms[i];
+        }, 300 + i * 180);
+    });
 });
