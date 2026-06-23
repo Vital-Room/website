@@ -15,33 +15,59 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe all sections for fade-in animation
-    const sections = document.querySelectorAll('.about-me, .services, .cta');
+    const sections = document.querySelectorAll('.about-me, .longevity, .services, .cta, .contact-section, .speaking-block, .speaking-page-hero, .testimonials, .speaking-video, .speaking-talks, .insomnia-page-hero, .insomnia-video, .insomnia-faq, .insomnia-cta');
     sections.forEach(section => {
         section.classList.add('fade-in');
         observer.observe(section);
     });
 
-    // Navbar background on scroll
-    const nav = document.querySelector('.nav');
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            nav.style.background = 'rgba(10, 10, 10, 0.98)';
-        } else {
-            nav.style.background = 'rgba(10, 10, 10, 0.95)';
-        }
-    });
+    // Site header scroll state
+    const siteHeader = document.querySelector('.site-header');
+    if (siteHeader) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 20) {
+                siteHeader.classList.add('is-scrolled');
+            } else {
+                siteHeader.classList.remove('is-scrolled');
+            }
+        });
+    }
 
-    // Smooth scroll for navigation links
+    // Mobile navigation toggle
+    const navToggle = document.querySelector('.site-header-toggle');
+    const siteNav = document.querySelector('.site-header-nav');
+
+    if (navToggle && siteNav) {
+        navToggle.addEventListener('click', function() {
+            const isOpen = siteNav.classList.toggle('is-open');
+            navToggle.setAttribute('aria-expanded', isOpen);
+            navToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+        });
+
+        siteNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                siteNav.classList.remove('is-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.setAttribute('aria-label', 'Open menu');
+            });
+        });
+    }
+
+    // Smooth scroll for in-page navigation links
     const navLinks = document.querySelectorAll('a[href^="#"]');
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
             const targetId = this.getAttribute('href');
+            if (!targetId || targetId === '#') return;
+
             const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+            if (!targetSection) return;
+
+            e.preventDefault();
+            const headerHeight = siteHeader ? siteHeader.offsetHeight : 0;
+            const targetTop = targetSection.getBoundingClientRect().top + window.pageYOffset - headerHeight - 16;
+
+            window.scrollTo({ top: targetTop, behavior: 'smooth' });
         });
     });
 
@@ -152,77 +178,6 @@ window.onclick = function(event) {
     }
 }
 
-// Testimonials Carousel - runs after full page load
-window.addEventListener('load', function() {
-    const carousel = document.querySelector('.testimonials-carousel');
-    const prevBtn = document.querySelector('.carousel-prev');
-    const nextBtn = document.querySelector('.carousel-next');
-    
-    if (carousel && prevBtn && nextBtn) {
-        let scrollInterval = null;
-        const scrollSpeed = 5;
-        
-        const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-        
-        // Scroll left on hover (with loop)
-        prevBtn.onmouseenter = function() {
-            scrollInterval = setInterval(function() {
-                if (carousel.scrollLeft <= 0) {
-                    // Jump to end
-                    carousel.scrollLeft = carousel.scrollWidth - carousel.clientWidth;
-                } else {
-                    carousel.scrollLeft = carousel.scrollLeft - scrollSpeed;
-                }
-            }, 16);
-        };
-        
-        prevBtn.onmouseleave = function() {
-            if (scrollInterval) {
-                clearInterval(scrollInterval);
-                scrollInterval = null;
-            }
-        };
-        
-        // Scroll right on hover (with loop)
-        nextBtn.onmouseenter = function() {
-            scrollInterval = setInterval(function() {
-                if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 5) {
-                    // Jump to start
-                    carousel.scrollLeft = 0;
-                } else {
-                    carousel.scrollLeft = carousel.scrollLeft + scrollSpeed;
-                }
-            }, 16);
-        };
-        
-        nextBtn.onmouseleave = function() {
-            if (scrollInterval) {
-                clearInterval(scrollInterval);
-                scrollInterval = null;
-            }
-        };
-        
-        // Click for quick jumps (with loop)
-        prevBtn.onclick = function(e) {
-            e.preventDefault();
-            if (carousel.scrollLeft <= 0) {
-                carousel.scrollLeft = carousel.scrollWidth - carousel.clientWidth;
-            } else {
-                carousel.scrollLeft = carousel.scrollLeft - 350;
-            }
-        };
-        
-        nextBtn.onclick = function(e) {
-            e.preventDefault();
-            if (carousel.scrollLeft >= carousel.scrollWidth - carousel.clientWidth - 5) {
-                carousel.scrollLeft = 0;
-            } else {
-                carousel.scrollLeft = carousel.scrollLeft + 350;
-            }
-        };
-    }
-});
-
 // Add some subtle animations on page load
 document.addEventListener('DOMContentLoaded', function() {
     // Animate logo on load
@@ -237,21 +192,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 300);
     }
 
-    // Animate hero photos with staggered timing
-    const heroPhotos = document.querySelectorAll('.hero-photo-card');
-    const photoTransforms = [
-        'rotate(-3deg) translateY(0)',
-        'rotate(2deg) translateY(0)',
-        'translateY(0)'
-    ];
+    // Animate hero on load
+    const heroContent = document.querySelector('.hero-content');
+    const heroVisual = document.querySelector('.hero-visual-frame');
 
-    heroPhotos.forEach((card, i) => {
-        card.style.opacity = '0';
-        card.style.transform = `${photoTransforms[i]} translateY(32px)`;
+    if (heroContent) {
+        heroContent.style.opacity = '0';
+        heroContent.style.transform = 'translateY(20px)';
         setTimeout(() => {
-            card.style.transition = 'opacity 0.9s ease-out, transform 0.45s ease, box-shadow 0.45s ease';
-            card.style.opacity = '1';
-            card.style.transform = photoTransforms[i];
-        }, 300 + i * 180);
-    });
+            heroContent.style.transition = 'opacity 0.8s ease-out, transform 0.6s ease';
+            heroContent.style.opacity = '1';
+            heroContent.style.transform = 'translateY(0)';
+        }, 200);
+    }
+
+    if (heroVisual) {
+        heroVisual.style.opacity = '0';
+        heroVisual.style.transform = 'rotate(2deg) translateY(32px)';
+        setTimeout(() => {
+            heroVisual.style.transition = 'opacity 0.9s ease-out, transform 0.5s ease, box-shadow 0.45s ease';
+            heroVisual.style.opacity = '1';
+            heroVisual.style.transform = 'rotate(2deg) translateY(0)';
+        }, 380);
+    }
 });
