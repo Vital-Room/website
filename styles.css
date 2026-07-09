@@ -585,6 +585,19 @@ body {
 .logo-image--imi {
     max-height: 48px;
     opacity: 1;
+    transform: translateY(-5px);
+}
+
+.logo-item:hover .logo-image--imi {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.cubo-logo {
+    max-height: 52px;
+}
+
+.logo-item--cubo {
+    margin-left: 1.55rem;
 }
 
 @keyframes logoScroll {
