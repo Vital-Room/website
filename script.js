@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe all sections for fade-in animation
-    const sections = document.querySelectorAll('.about-me, .longevity, .services, .cta, .contact-section, .speaking-block, .speaking-page-hero, .testimonials, .speaking-video, .speaking-talks, .insomnia-page-hero, .insomnia-video, .insomnia-faq, .insomnia-cta');
+    const sections = document.querySelectorAll('.about-me, .longevity, .services, .cta, .contact-section, .founders-note, .speaking-block, .speaking-page-hero, .testimonials, .speaking-faq, .speaking-talks, .insomnia-page-hero, .insomnia-video, .insomnia-faq, .insomnia-cta');
     sections.forEach(section => {
         section.classList.add('fade-in');
         observer.observe(section);
