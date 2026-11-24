@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }, observerOptions);
 
     // Observe all sections for fade-in animation
-    const sections = document.querySelectorAll('.about-me, .longevity, .services, .cta, .contact-section, .founders-note, .speaking-block, .speaking-page-hero, .testimonials, .speaking-faq, .speaking-talks, .insomnia-page-hero, .insomnia-video, .insomnia-faq, .insomnia-cta');
+    const sections = document.querySelectorAll('.about-me, .longevity, .services, .cta, .contact-section, .founders-note, .speaking-block, .speaking-page-hero, .testimonials, .speaking-faq, .speaking-talks, .value-points, .booking-process, .insomnia-page-hero, .insomnia-video, .insomnia-faq, .insomnia-cta');
     sections.forEach(section => {
         section.classList.add('fade-in');
         observer.observe(section);
@@ -80,6 +80,43 @@ document.addEventListener('DOMContentLoaded', function() {
             heroVideo.style.transform = `translateY(${rate}px)`;
         });
     }
+
+    // Topic carousel (Easy Booking Process)
+    document.querySelectorAll('[data-topic-carousel]').forEach(function(carousel) {
+        const slides = Array.from(carousel.querySelectorAll('.topic-slide'));
+        const prevBtn = carousel.querySelector('.topic-carousel-btn--prev');
+        const nextBtn = carousel.querySelector('.topic-carousel-btn--next');
+        const dotsWrap = carousel.querySelector('.topic-carousel-dots');
+        if (!slides.length) return;
+
+        let index = Math.max(0, slides.findIndex(function(slide) {
+            return slide.classList.contains('is-active');
+        }));
+
+        slides.forEach(function(_, i) {
+            const dot = document.createElement('button');
+            dot.type = 'button';
+            dot.className = 'topic-carousel-dot' + (i === index ? ' is-active' : '');
+            dot.setAttribute('aria-label', 'Go to topic ' + (i + 1));
+            dot.addEventListener('click', function() {
+                showSlide(i);
+            });
+            dotsWrap.appendChild(dot);
+        });
+
+        function showSlide(nextIndex) {
+            index = (nextIndex + slides.length) % slides.length;
+            slides.forEach(function(slide, i) {
+                slide.classList.toggle('is-active', i === index);
+            });
+            dotsWrap.querySelectorAll('.topic-carousel-dot').forEach(function(dot, i) {
+                dot.classList.toggle('is-active', i === index);
+            });
+        }
+
+        if (prevBtn) prevBtn.addEventListener('click', function() { showSlide(index - 1); });
+        if (nextBtn) nextBtn.addEventListener('click', function() { showSlide(index + 1); });
+    });
 
     // Add loading animation
     window.addEventListener('load', function() {

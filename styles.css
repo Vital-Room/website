@@ -632,6 +632,41 @@ body {
     margin-left: 1.55rem;
 }
 
+.logo-image--on-dark {
+    filter: grayscale(100%) invert(1);
+}
+
+.logo-item:hover .logo-image--on-dark {
+    filter: grayscale(0%) invert(1);
+}
+
+.logo-item--ambulance {
+    min-width: 200px;
+}
+
+.ambulance-logo {
+    max-height: 48px;
+    max-width: 200px;
+}
+
+.logo-item--leaders {
+    min-width: 170px;
+}
+
+.logo-item--leaders .logo-image--on-dark {
+    max-height: 44px;
+    max-width: 170px;
+}
+
+.logo-item--sahf {
+    min-width: 180px;
+}
+
+.logo-item--sahf .logo-image--on-dark {
+    max-height: 40px;
+    max-width: 180px;
+}
+
 @keyframes logoScroll {
     0% {
         transform: translateX(0);
@@ -643,6 +678,74 @@ body {
 
 .logo-carousel:hover .logo-track-1 {
     animation-play-state: paused;
+}
+
+/* Experiment: stationary trusted-by logos */
+.logo-carousel--static {
+    overflow: visible;
+    mask: none;
+    -webkit-mask: none;
+}
+
+.logo-track--static {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(1rem, 2.2vw, 1.75rem) clamp(1.25rem, 2.8vw, 2.25rem);
+    width: 100%;
+    max-width: 920px;
+    margin: 0 auto;
+    animation: none;
+}
+
+.logo-carousel--static .logo-item {
+    height: 44px;
+    min-width: 0;
+    margin-left: 0;
+    opacity: 0.75;
+}
+
+.logo-carousel--static .logo-image {
+    max-height: 32px;
+}
+
+.logo-carousel--static .arup-logo,
+.logo-carousel--static .bbc-logo {
+    max-height: 22px;
+}
+
+.logo-carousel--static .logo-image--imi,
+.logo-carousel--static .cubo-logo {
+    max-height: 28px;
+    transform: none;
+}
+
+.logo-carousel--static .logo-item:hover .logo-image--imi {
+    transform: scale(1.05);
+}
+
+.logo-carousel--static .logo-item--leaders,
+.logo-carousel--static .logo-item--sahf {
+    height: 40px;
+}
+
+.logo-carousel--static .logo-image--on-dark {
+    max-height: 36px;
+    filter: grayscale(100%) invert(1);
+}
+
+.logo-carousel--static .logo-item:hover .logo-image--on-dark {
+    filter: grayscale(0%) invert(1);
+    transform: scale(1.05);
+}
+
+.logo-item--leaders .logo-image--on-dark {
+    max-width: 150px;
+}
+
+.logo-item--sahf .logo-image--on-dark {
+    max-width: 170px;
 }
 
 /* Testimonials Section */
@@ -1730,6 +1833,10 @@ body {
     margin: 0 0 0.65rem;
 }
 
+.hero-lead-intro--spaced {
+    margin-top: 1.1rem;
+}
+
 .hero-lead-list {
     list-style: none;
     margin: 0;
@@ -1775,8 +1882,9 @@ body {
 }
 
 .speaking-page-hero .speaking-block-inner {
-    align-items: center;
-    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+    align-items: start;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: clamp(1.75rem, 3.5vw, 3rem);
 }
 
 .speaking-page-hero .speaking-block-content {
@@ -1795,12 +1903,41 @@ body {
     isolation: isolate;
 }
 
+.hero-video-embed {
+    min-width: 0;
+    width: 100%;
+    isolation: isolate;
+    /* Align video top roughly between title lines 1 and 2 */
+    margin-top: clamp(2.6rem, 4.2vw, 3.7rem);
+}
+
+.hero-video-frame {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #1a1a1a;
+    box-shadow:
+        0 8px 24px rgba(45, 45, 45, 0.08),
+        0 20px 48px rgba(45, 45, 45, 0.12);
+}
+
+.hero-video-frame iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 .speaking-page-content {
     padding-top: 2rem;
     padding-bottom: 6rem;
 }
 
-/* Speaking talks — loop video + talk list */
+/* Speaking talks — loop video + talk list (kept for speaking.html) */
 .speaking-talks {
     padding: 4rem 0;
     background: #fff;
@@ -1844,6 +1981,327 @@ body {
     height: 6px;
     background: var(--mint);
     border-radius: 50%;
+}
+
+/* Homepage value points — alternating rows (inspiration: compact feature split) */
+.value-points {
+    padding: clamp(2.75rem, 5vw, 4rem) 0;
+    background: #fff;
+}
+
+.value-points-list {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 4vw, 3rem);
+}
+
+.value-point {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(1.5rem, 4vw, 3.25rem);
+    align-items: center;
+}
+
+.value-point--text-right .value-point-copy {
+    order: 2;
+}
+
+.value-point--text-right .value-point-media {
+    order: 1;
+}
+
+.value-point-copy {
+    min-width: 0;
+    max-width: 30rem;
+}
+
+.value-point--text-right .value-point-copy {
+    margin-left: auto;
+}
+
+.value-point-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.55rem, 2.6vw, 2.15rem);
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.25;
+    margin: 0 0 0.75rem;
+}
+
+.value-point-title .text-highlight {
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+}
+
+.value-point-note {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: clamp(1rem, 1.35vw, 1.1rem);
+    font-weight: 400;
+    line-height: 1.65;
+    color: var(--text-muted);
+    max-width: 28rem;
+}
+
+.paint-underline {
+    position: relative;
+    display: inline;
+    white-space: nowrap;
+    padding-bottom: 0.12em;
+}
+
+.paint-underline--red::before {
+    content: '';
+    position: absolute;
+    left: -0.08em;
+    right: -0.1em;
+    bottom: 0.02em;
+    height: 0.2em;
+    background: #d64545;
+    border-radius: 2px 14px 3px 12px / 12px 3px 14px 2px;
+    transform: rotate(-1.2deg);
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+.paint-underline--red::after {
+    content: '';
+    position: absolute;
+    left: -0.04em;
+    right: -0.05em;
+    bottom: 0.04em;
+    height: 0.11em;
+    background: #d64545;
+    border-radius: 1px 10px 2px 9px / 9px 2px 10px 1px;
+    transform: rotate(-0.5deg);
+    pointer-events: none;
+}
+
+.value-point-media {
+    min-width: 0;
+    width: 100%;
+}
+
+.value-point-photo-frame {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+}
+
+.value-point--text-left .value-point-photo-frame,
+.value-point--text-left .value-point-screens {
+    margin-left: auto;
+}
+
+.value-point-photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 10px 28px rgba(45, 45, 45, 0.1);
+}
+
+.value-point-photo-frame--speaker .value-point-photo {
+    object-position: center 30%;
+}
+
+.value-point-accent {
+    position: absolute;
+    z-index: 2;
+    border: 3px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 8px 18px rgba(45, 45, 45, 0.16);
+    object-fit: cover;
+    background: #fff;
+}
+
+.value-point-accent--tedx {
+    width: 36%;
+    aspect-ratio: 16 / 10;
+    right: -5%;
+    bottom: -8%;
+    transform: rotate(-5deg);
+}
+
+.value-point-screens {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    width: 100%;
+    max-width: 480px;
+}
+
+.value-point-screen {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px solid rgba(45, 45, 45, 0.08);
+    box-shadow: 0 8px 22px rgba(45, 45, 45, 0.08);
+}
+
+/* Easy booking process */
+.booking-process {
+    padding: clamp(3rem, 6vw, 4.5rem) 0;
+    background: var(--bg-cream);
+}
+
+.booking-process-title {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.75rem, 3vw, 2.4rem);
+    font-weight: 600;
+    color: var(--text-dark);
+    text-align: center;
+    margin: 0 0 clamp(2rem, 4vw, 2.75rem);
+}
+
+.booking-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.75rem, 3.5vw, 2.5rem);
+    max-width: 760px;
+    margin-inline: auto;
+}
+
+.booking-step-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.9rem;
+}
+
+.booking-step-number {
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--coral);
+    color: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.15rem;
+}
+
+.booking-step-title {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+    font-weight: 600;
+    line-height: 1.45;
+    color: var(--text-dark);
+}
+
+.booking-step-note {
+    margin: 0.85rem 0 0;
+    padding-left: 2.9rem;
+    font-size: 0.92rem;
+    color: var(--text-light);
+}
+
+.topic-carousel {
+    position: relative;
+    margin: 1.15rem 0 0;
+    padding-left: 2.9rem;
+    max-width: 520px;
+}
+
+.topic-carousel-viewport {
+    overflow: hidden;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 10px 28px rgba(45, 45, 45, 0.08);
+}
+
+.topic-carousel-track {
+    position: relative;
+}
+
+.topic-slide {
+    display: none;
+    padding: 1.15rem 1.15rem 1.25rem;
+}
+
+.topic-slide.is-active {
+    display: block;
+}
+
+.topic-slide-title {
+    margin: 0 0 0.85rem;
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(1.15rem, 2vw, 1.35rem);
+    font-weight: 600;
+    line-height: 1.3;
+    color: var(--text-dark);
+}
+
+.topic-slide-image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.topic-carousel-btn {
+    position: absolute;
+    top: 52%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 2.35rem;
+    height: 2.35rem;
+    border: none;
+    border-radius: 50%;
+    background: #fff;
+    color: var(--text-dark);
+    box-shadow: 0 6px 18px rgba(45, 45, 45, 0.14);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.topic-carousel-btn:hover {
+    background: var(--coral);
+    color: #fff;
+}
+
+.topic-carousel-btn--prev {
+    left: 0.35rem;
+}
+
+.topic-carousel-btn--next {
+    right: -0.35rem;
+}
+
+.topic-carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.45rem;
+    margin-top: 0.85rem;
+}
+
+.topic-carousel-dot {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    background: rgba(45, 45, 45, 0.2);
+    cursor: pointer;
+}
+
+.topic-carousel-dot.is-active {
+    background: var(--coral);
 }
 
 .vimeo-embed--loop {
@@ -2170,6 +2628,51 @@ body {
         grid-template-columns: 1fr;
     }
 
+    .value-points-list {
+        gap: 2.25rem;
+    }
+
+    .value-point,
+    .value-point--text-right {
+        grid-template-columns: 1fr;
+        gap: 1.1rem;
+    }
+
+    .value-point--text-right .value-point-copy,
+    .value-point--text-left .value-point-copy {
+        order: 1;
+        margin-left: 0;
+        max-width: none;
+    }
+
+    .value-point--text-right .value-point-media,
+    .value-point--text-left .value-point-media {
+        order: 2;
+    }
+
+    .value-point-photo-frame,
+    .value-point-screens {
+        max-width: 420px;
+        margin-left: 0 !important;
+    }
+
+    .topic-carousel {
+        padding-left: 0;
+        max-width: 100%;
+    }
+
+    .topic-carousel-btn--prev {
+        left: 0.5rem;
+    }
+
+    .topic-carousel-btn--next {
+        right: 0.5rem;
+    }
+
+    .booking-step-note {
+        padding-left: 0;
+    }
+
     .vimeo-embed--loop {
         max-width: 520px;
         margin: 0 auto;
@@ -2184,6 +2687,13 @@ body {
         max-width: 360px;
         margin: 0 auto;
         min-height: 340px;
+    }
+
+    .hero-video-embed {
+        max-width: 640px;
+        margin-top: 0.5rem;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .speaking-block-content {
